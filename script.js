@@ -1,52 +1,63 @@
-// Create unique symptom list
+
 const symptomSet = new Set();
 
 diseases.forEach(d => {
     d.symptoms.forEach(s => symptomSet.add(s));
 });
 
-const symptomListDiv = document.getElementById("symptomList");
+const div = document.getElementById("symptomList");
 
 symptomSet.forEach(symptom => {
-    const label = document.createElement("label");
-    label.innerHTML = `
+    div.innerHTML += `
+        <label>
         <input type="checkbox" value="${symptom}">
         ${symptom}
+        </label><br>
     `;
-    symptomListDiv.appendChild(label);
-    symptomListDiv.appendChild(document.createElement("br"));
 });
 
 function checkDisease() {
-    const selectedSymptoms = [];
-    document.querySelectorAll("input[type=checkbox]:checked")
-        .forEach(cb => selectedSymptoms.push(cb.value));
+    const selected = [];
+    document.querySelectorAll("input:checked")
+        .forEach(cb => selected.push(cb.value));
 
-    let found = false;
     let resultHTML = "";
 
     diseases.forEach(disease => {
-        let matchCount = disease.symptoms.filter(s =>
-            selectedSymptoms.includes(s)
-        ).length;
+        let match = disease.symptoms.filter(s =>
+            selected.includes(s)).length;
 
-        if (matchCount >= 2) { // minimum 2 matches
-            found = true;
-
+        if(match >= 1) {
             resultHTML += `
-                <h3>Disease: ${disease.name}</h3>
-                <p><strong>Cause:</strong> ${disease.cause}</p>
-                <p><strong>Medicine:</strong> ${disease.medicine}</p>
-                <p><strong>Food to Eat:</strong> ${disease.foodEat}</p>
-                <p><strong>Food to Avoid:</strong> ${disease.foodAvoid}</p>
+                <h3>${disease.name}</h3>
+
+                <button onclick="openDetails('${disease.name}','medicine')">
+                Medicine
+                </button>
+
+                <button onclick="openDetails('${disease.name}','cause')">
+                Causing Agent
+                </button>
+
+                <button onclick="openDetails('${disease.name}','food')">
+                Food to Avoid
+                </button>
+
+                <button onclick="openDetails('${disease.name}','home')">
+                Home Remedies
+                </button>
                 <hr>
             `;
         }
     });
 
-    if (!found) {
-        resultHTML = "No matching disease found. Please consult a doctor.";
-    }
+    if(resultHTML === "")
+        resultHTML = "No matching disease found.";
 
     document.getElementById("result").innerHTML = resultHTML;
+}
+
+function openDetails(name, section) {
+    window.location.href =
+        `details.html?disease=${name}&section=${section}`;
 }
