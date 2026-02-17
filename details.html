@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disease Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 id="title"></h1>
+<img id="diseaseImage" width="350">
+<div id="detailsContent"></div>
+
+<script src="data.js"></script>
+<script>
+const params = new URLSearchParams(window.location.search);
+const diseaseName = params.get("disease");
+const section = params.get("section");
+
+const disease = diseases.find(d => d.name === diseaseName);
+
+document.getElementById("title").innerText =
+    diseaseName + " - " + section;
+
+document.getElementById("diseaseImage").src =
+    disease.image;
+
+let content = "";
+
+if(section === "medicine") content = disease.medicineDetails;
+if(section === "cause") content = disease.causeDetails;
+if(section === "food") content = disease.foodAvoidDetails;
+if(section === "home") content = disease.homeRemedyDetails;
+
+document.getElementById("detailsContent").innerHTML = content;
+</script>
+
+</body>
+</html>
