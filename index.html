@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AI Medical Symptom Checker</title>
+    <title>AI Medical System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>AI Medical Symptom Checker</h1>
-    <p class="warning">
-        ⚠ This website is for educational purposes only. Always consult a doctor.
-    </p>
+<h1>AI Medical Symptom Checker</h1>
+<p class="warning">
+⚠ Educational purpose only. Consult a doctor.
+</p>
 
-    <h2>Select Your Symptoms:</h2>
+<h2>Select Symptoms:</h2>
+<div id="symptomList"></div>
 
-    <div id="symptomList"></div>
+<button onclick="checkDisease()">Check Disease</button>
 
-    <button onclick="checkDisease()">Check Disease</button>
+<h2>Result:</h2>
+<div id="result"></div>
 
-    <h2>Result:</h2>
-    <div id="result"></div>
-
-    <script src="diseases.js"></script>
-    <script src="script.js"></script>
+<script src="data.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
