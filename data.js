@@ -1,81 +1,91 @@
 const diseases = [
 
 {
-    name: "Common Cold",
+name: "Common Cold",
+image: "https://images.unsplash.com/photo-1584516150909-c43483ee7930",
 
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Cold_symptoms.jpg",
+symptoms: ["Fever","Cough","Runny nose","Sneezing","Sore throat","Headache"],
 
-    symptoms: ["Fever", "Cough", "Runny nose"],
+medicineDetails: `
+<ul>
+<li>Paracetamol</li>
+<li>Cough Syrup</li>
+<li>Antihistamines</li>
+</ul>`,
 
-    medicineDetails: `
-    <h3>Medicines</h3>
-    <ul>
-        <li>Paracetamol</li>
-        <li>Antihistamines</li>
-        <li>Cough Syrup</li>
-    </ul>
-    `,
+causeDetails: `
+<p>Caused by viral infection affecting upper respiratory tract.</p>`,
 
-    causeDetails: `
-    <h3>Causing Agent</h3>
-    <p>Caused by Viral infection (Rhinovirus).</p>
-    `,
+foodAvoidDetails: `
+<ul>
+<li>Cold drinks</li>
+<li>Ice cream</li>
+<li>Oily food</li>
+</ul>`,
 
-    foodAvoidDetails: `
-    <h3>Food to Avoid</h3>
-    <ul>
-        <li>Cold drinks</li>
-        <li>Ice cream</li>
-        <li>Oily food</li>
-    </ul>
-    `,
-
-    homeRemedyDetails: `
-    <h3>Home Remedies</h3>
-    <ul>
-        <li>Warm water</li>
-        <li>Steam inhalation</li>
-        <li>Ginger tea</li>
-    </ul>
-    `
+homeRemedyDetails: `
+<ul>
+<li>Ginger tea</li>
+<li>Steam inhalation</li>
+<li>Warm water</li>
+</ul>`
 },
 
 {
-    name: "Diabetes",
+name: "Diabetes",
+image: "https://images.unsplash.com/photo-1584367369853-5f9eb4b5a5b1",
 
-    image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Insulin_pen.jpg",
+symptoms: ["Frequent urination","Weight loss","Fatigue","Blurred vision","Excess thirst"],
 
-    symptoms: ["Frequent urination", "Weight loss", "Fatigue"],
+medicineDetails: `
+<ul>
+<li>Metformin</li>
+<li>Insulin therapy</li>
+</ul>`,
 
-    medicineDetails: `
-    <h3>Medicines</h3>
-    <ul>
-        <li>Metformin</li>
-        <li>Insulin</li>
-    </ul>
-    `,
+causeDetails: `
+<p>Pancreas does not produce enough insulin.</p>`,
 
-    causeDetails: `
-    <h3>Causing Agent</h3>
-    <p>Insulin deficiency due to pancreas disorder.</p>
-    `,
+foodAvoidDetails: `
+<ul>
+<li>Sugar</li>
+<li>Sweets</li>
+<li>Soft drinks</li>
+</ul>`,
 
-    foodAvoidDetails: `
-    <h3>Food to Avoid</h3>
-    <ul>
-        <li>Sugar</li>
-        <li>Sweets</li>
-        <li>Soft drinks</li>
-    </ul>
-    `,
+homeRemedyDetails: `
+<ul>
+<li>Regular exercise</li>
+<li>Fiber rich food</li>
+</ul>`
+},
 
-    homeRemedyDetails: `
-    <h3>Home Remedies</h3>
-    <ul>
-        <li>Daily walking</li>
-        <li>Fiber rich diet</li>
-    </ul>
-    `
+{
+name: "Typhoid",
+image: "https://images.unsplash.com/photo-1588776814546-ec7e5f8d01a3",
+
+symptoms: ["High Fever","Weakness","Abdominal pain","Headache","Loss of appetite"],
+
+medicineDetails: `
+<ul>
+<li>Antibiotics (Doctor prescribed)</li>
+<li>ORS</li>
+</ul>`,
+
+causeDetails: `
+<p>Caused by Salmonella bacteria through contaminated food/water.</p>`,
+
+foodAvoidDetails: `
+<ul>
+<li>Spicy food</li>
+<li>Street food</li>
+</ul>`,
+
+homeRemedyDetails: `
+<ul>
+<li>Boiled water</li>
+<li>Soft diet</li>
+</ul>`
 }
 
 ];
