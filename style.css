@@ -1,28 +1,66 @@
 body {
-    font-family: Arial;
-    margin: 40px;
-    background: #f2f2f2;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1580281658629-9ec9fbee7a7e");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.overlay {
+    background: rgba(255,255,255,0.92);
+    min-height: 100vh;
+    padding: 20px;
 }
 
 h1 {
+    text-align: center;
     color: darkblue;
 }
 
 .warning {
     color: red;
+    text-align: center;
     font-weight: bold;
 }
 
-button {
-    margin: 5px;
-    padding: 10px;
+.symptoms {
+    columns: 2;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.main-btn {
+    padding: 10px 20px;
     background: darkblue;
     color: white;
     border: none;
-    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
 }
 
-img {
+.main-btn:hover {
+    background: navy;
+}
+
+#result {
     margin-top: 20px;
+}
+
+.disease-img {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: 15px auto;
     border-radius: 10px;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+    .symptoms {
+        columns: 1;
+    }
 }
