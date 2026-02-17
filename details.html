@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Disease Details</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disease Details</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<div class="overlay">
+
 <h1 id="title"></h1>
-<img id="diseaseImage" width="350">
+
+<img id="diseaseImage" class="disease-img">
+
 <div id="detailsContent"></div>
 
+<br>
+<a href="index.html">
+<button class="main-btn">⬅ Back</button>
+</a>
+
+</div>
+
 <script src="data.js"></script>
+
 <script>
 const params = new URLSearchParams(window.location.search);
-const diseaseName = params.get("disease");
+const diseaseName = decodeURIComponent(params.get("disease"));
 const section = params.get("section");
 
 const disease = diseases.find(d => d.name === diseaseName);
 
 document.getElementById("title").innerText =
-    diseaseName + " - " + section;
+diseaseName + " - " + section.toUpperCase();
 
-document.getElementById("diseaseImage").src =
-    disease.image;
+document.getElementById("diseaseImage").src = disease.image;
 
 let content = "";
 
